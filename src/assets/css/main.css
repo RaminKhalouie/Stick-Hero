@@ -554,12 +554,62 @@ video {
   display: none;
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+.h-screen {
+  height: 100vh;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+.w-full {
+  width: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.bg-img-1 {
+  background-image: url('../images/back/pic-1.webp');
+}
+
+.bg-img-10 {
+  background-image: url('../images/back/pic-10.jpg');
+}
+
+.bg-img-2 {
+  background-image: url('../images/back/pic-2.jpg');
+}
+
+.bg-img-3 {
+  background-image: url('../images/back/pic-3.jpg');
+}
+
+.bg-img-4 {
+  background-image: url('../images/back/pic-4.jpg');
+}
+
+.bg-img-5 {
+  background-image: url('../images/back/pic-5.jpg');
+}
+
+.bg-img-6 {
+  background-image: url('../images/back/pic-6.jpg');
+}
+
+.bg-img-7 {
+  background-image: url('../images/back/pic-7.jpg');
+}
+
+.bg-img-8 {
+  background-image: url('../images/back/pic-8.png');
+}
+
+.bg-img-9 {
+  background-image: url('../images/back/pic-9.png');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
