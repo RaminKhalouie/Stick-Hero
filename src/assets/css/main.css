@@ -631,6 +631,10 @@ video {
   top: -58px;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
 .flex {
   display: flex;
 }

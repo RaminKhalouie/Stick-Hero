@@ -5,6 +5,7 @@ const score = document.getElementById('score');
 const playBtn = document.getElementById('play');
 const gameover = document.getElementById('gameover');
 const resetBtn = document.getElementById('reset');
+const sound = document.getElementById('sound');
 const ground = document.getElementById('ground');
 const hero = document.getElementById('hero');
 
@@ -12,6 +13,7 @@ let isPlaying = false;
 let linesCount = 0;
 let activeLine = 1;
 let playerScore = 0;
+let isOnSound = true;
 
 setBackGroundImage();
 playBtn.addEventListener('click', play);
@@ -159,12 +161,26 @@ function reset() {
     hero.style.top = '-58px';
 
 }
+sound.addEventListener('click', () => {
+    if (isOnSound) {
+        isOnSound = false;
+        sound.children[0].src = "assets/images/icon/sound-off.svg";
+    } else {
+        isOnSound = true;
+        sound.children[0].src = "assets/images/icon/sound-on.svg";
+    }
+});
 
+const audioPass = new Audio('assets/audio/pass.wav');
 function playPass() {
-    const audio = new Audio('assets/audio/pass.wav');
-    audio.play();
+    if (isOnSound) {
+        audioPass.play();
+    }
 }
+
+const audioDie = new Audio('assets/audio/die.wav');
 function playDie() {
-    const audio = new Audio('assets/audio/die.wav');
-    audio.play();
+    if (isOnSound) {
+        audioDie.play();
+    }
 }
