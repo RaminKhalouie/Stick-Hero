@@ -802,6 +802,11 @@ video {
   background-color: rgb(87 83 78 / var(--tw-bg-opacity, 1));
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .bg-img-1 {
   background-image: url('../images/back/pic-1.webp');
 }
