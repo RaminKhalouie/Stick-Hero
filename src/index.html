@@ -9,6 +9,11 @@
     <link rel="shortcut icon" href="assets/images/icon/Nicon.png" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Font Awesome -->
+    <!--========== FontAwesome ==========-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -17,7 +22,8 @@
         <section class="h-[60%] flex flex-col items-center p-4">
             <!-- about icon -->
             <figure
-                class="info w-fit rounded-full p-4 bg-orange-600 flex justify-center items-center  cursor-pointer fixed top-4 left-4">
+                class="info w-fit rounded-full p-4 bg-orange-600 flex justify-center items-center  cursor-pointer fixed top-4 left-4"
+                id="about">
                 <img src="assets/images/icon/icn.png" class="w-6 h-6 lg:w-9 lg:h-9" alt="">
             </figure>
 
@@ -52,6 +58,37 @@
             <!-- <div class="line w-[40px]"></div> -->
         </section>
     </main>
+
+    <article
+        class="w-full h-screen overflow-hidden fixed top-0 left-0 bg-turner bg-cover bg-center path-none duration-1000  flex justify-center items-center"
+        id="about-container">
+        <figure
+            class="info w-fit rounded-full p-4 bg-stone-600 flex justify-center shadow-2xl items-center  cursor-pointer fixed top-4 left-4"
+            id="close-btn">
+            <img src="assets/images/icon/close.svg" class="w-6 h-6 lg:w-9 lg:h-9" alt="">
+        </figure>
+
+        <div class="flex flex-col items-center gap-4">
+            <img src="assets/images/icon/Ramin-khalouie.webp"
+                class="w-[150px] aspect-square rounded-full object-cover border-8" alt="">
+            <h4 class="flex flex-col items-center text-3xl">Develop BY : <strong>Ramin Khalouie 🎮</strong></h4>
+            <div class="flex gap-4 *:text-white *:duration-300">
+
+                <a href="https://www.linkedin.com/in/ramin-khalouie-83902a20a/" class="hover:scale-125" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i> Linkedin
+                </a>
+                <a href="https://instagram.com/ramin_developer" class="hover:scale-125" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://github.com/RaminKhalouie" class="hover:scale-125" target="_blank">
+                    <i class="fa-brands fa-github"></i> Github
+                </a>
+                <a href="mailto:ra.khalouie@gmail.com" class="hover:scale-125" target="_blank">
+                    <i class="fa-solid fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </article>
     <!-- JS -->
     <script src="assets/js/main.js"></script>
 </body>

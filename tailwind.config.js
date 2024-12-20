@@ -16,6 +16,7 @@ module.exports = {
         "img-9": "url('../images/back/pic-9.png')",
         "img-10": "url('../images/back/pic-10.jpg')",
         "pipe": "url('../images/icon/pipe-green.png')",
+        "turner": "url('../images/back/page-turner.svg')",
       }
     },
   },

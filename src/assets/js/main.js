@@ -9,6 +9,10 @@ const sound = document.getElementById('sound');
 const ground = document.getElementById('ground');
 const hero = document.getElementById('hero');
 
+const aboutBtn = document.getElementById('about');
+const about = document.getElementById('about-container');
+const closeBtn = document.getElementById('close-btn');
+
 let isPlaying = false;
 let linesCount = 0;
 let activeLine = 1;
@@ -188,3 +192,11 @@ function playDie() {
         audioDie.play();
     }
 }
+
+aboutBtn.addEventListener('click', () => {
+    about.classList.replace('path-none', 'path-complete');
+});
+
+closeBtn.addEventListener('click', () => {
+    about.classList.replace('path-complete', 'path-none');
+});
