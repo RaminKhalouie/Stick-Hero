@@ -75,70 +75,74 @@ document.addEventListener('touchend', endMove);
 document.addEventListener('mousedown', strartMove);
 document.addEventListener('mouseup', endMove);
 
-function strartMove() {
-    if (isPlaying) {
-        inter = setInterval(() => {
-            const bar = ground.children[activeLine].children[0];
-            const h = bar.clientHeight + 1;
-            bar.style.height = h + 'px';
-        }, 0);
+function strartMove(e) {
+    if (e.target.tagName == 'SECTION' || e.target.tagName == 'DIV') {
+        if (isPlaying) {
+            inter = setInterval(() => {
+                const bar = ground.children[activeLine].children[0];
+                const h = bar.clientHeight + 1;
+                bar.style.height = h + 'px';
+            }, 0);
+        }
     }
 }
 
-function endMove() {
+function endMove(e) {
 
-    if (isPlaying) {
-        clearInterval(inter);
-        const line = ground.children[activeLine];
-        const bar = line.children[0];
-        bar.classList.add('duration-500');
-        bar.style.transform = 'rotate(90deg)';
+    if (e.target.tagName == 'SECTION' || e.target.tagName == 'DIV') {
+        if (isPlaying) {
+            clearInterval(inter);
+            const line = ground.children[activeLine];
+            const bar = line.children[0];
+            bar.classList.add('duration-500');
+            bar.style.transform = 'rotate(90deg)';
 
-        if (
-            bar.clientHeight < (Number(line.dataset.mr) + line.nextElementSibling.clientWidth) &&
-            bar.clientHeight > (Number(line.dataset.mr))) {
+            if (
+                bar.clientHeight < (Number(line.dataset.mr) + line.nextElementSibling.clientWidth) &&
+                bar.clientHeight > (Number(line.dataset.mr))) {
 
-            // hero.style.transform = 'translateX(' + (bar.clientHeight + (line.clientWidth - 20)) + 'px)';
-
-
-            const heroLeft = calcLeft(line.nextElementSibling);
-            hero.style.left = heroLeft + "px";
-            hero.dataset.hr = heroLeft;
-            setTimeout(() => {
-                playPass();
-                playerScore += 1;
-                score.textContent = playerScore;
-            }, 300);
+                // hero.style.transform = 'translateX(' + (bar.clientHeight + (line.clientWidth - 20)) + 'px)';
 
 
-            ground.dataset.l = (ground.dataset.l * 1) - ((line.dataset.mr * 1) + line.clientWidth);
-            ground.style.left = ground.dataset.l + 'px';
+                const heroLeft = calcLeft(line.nextElementSibling);
+                hero.style.left = heroLeft + "px";
+                hero.dataset.hr = heroLeft;
+                setTimeout(() => {
+                    playPass();
+                    playerScore += 1;
+                    score.textContent = playerScore;
+                }, 300);
 
-            activeLine += 1;
-            if (activeLine >= linesCount / 2) {
-                generateLine();
+
+                ground.dataset.l = (ground.dataset.l * 1) - ((line.dataset.mr * 1) + line.clientWidth);
+                ground.style.left = ground.dataset.l + 'px';
+
+                activeLine += 1;
+                if (activeLine >= linesCount / 2) {
+                    generateLine();
+                }
+
+
+            } else {
+                // hero.style.transform = 'translateX(' + (bar.clientHeight + (line.clientWidth - 20)) + 'px)';
+                hero.style.left = ((bar.clientHeight * 1 + hero.dataset.hr * 1) + 20) + 'px';
+                setTimeout(() => {
+                    bar.style.transform = 'rotate(90deg) rotate(90deg)';
+                }, 500);
+
+                setTimeout(() => {
+                    hero.style.top = '1000px';
+                    playDie();
+                }, 700);
+
+                isPlaying = false;
+
+                resetBtn.classList.remove('hidden');
+                gameover.classList.replace('hidden', 'flex');
+
             }
 
-
-        } else {
-            // hero.style.transform = 'translateX(' + (bar.clientHeight + (line.clientWidth - 20)) + 'px)';
-            hero.style.left = ((bar.clientHeight * 1 + hero.dataset.hr * 1) + 20) + 'px';
-            setTimeout(() => {
-                bar.style.transform = 'rotate(90deg) rotate(90deg)';
-            }, 500);
-
-            setTimeout(() => {
-                hero.style.top = '1000px';
-                playDie();
-            }, 700);
-
-            isPlaying = false;
-
-            resetBtn.classList.remove('hidden');
-            gameover.classList.replace('hidden', 'flex');
-
         }
-
     }
 }
 
