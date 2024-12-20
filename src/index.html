@@ -12,8 +12,39 @@
 </head>
 
 <body>
-    <main class="w-full h-screen overflow-hidden bg-cover bg-center">
+    <main class="w-full h-dvh overflow-hidden bg-cover bg-center flex flex-col *:w-full">
+        <!-- menu section -->
+        <section class="h-[60%] flex flex-col items-center p-4">
+            <!-- about icon -->
+            <figure
+                class="info w-fit rounded-full p-4 bg-orange-600 flex justify-center items-center  cursor-pointer fixed top-4 left-4">
+                <img src="assets/images/icon/icn.png" class="w-6 h-6 lg:w-9 lg:h-9" alt="">
+            </figure>
 
+            <!-- logo -->
+            <h1 class="flex flex-col justify-center items-center text-6xl lg:text-9xl font-bold" id="logo">STICK <strong
+                    class="text-4xl lg:text-7xl">HERO</strong></h1>
+
+            <h2 id="score"
+                class="px-8 py-4 rounded-lg bg-stone-800 text-white text-4xl shadow-lg shadow-[#0005] hidden ">0</h2>
+
+            <button class="btn" id="play">play</button>
+
+            <h3 class="flex-col justify-center items-center text-6xl lg:text-9xl font-bold text-red-600 drop-shadow-sm hidden"
+                id="gameover">GAME OVER</h3>
+            <button class="btn hidden" id="reset">reset</button>
+
+
+        </section>
+        <!-- game section -->
+        <section data-l="0" data-l2="0"
+            class="h-[40%] flex ps-4 left-0 lg:left-[40%] relative flex-nowrap min-w-[5000px] duration-700 delay-1000"
+            id="ground">
+            <figure class="absolute top-[-58px] w-[40px] flex duration-500 delay-500 -translate-x-1/2" id="hero">
+                <img src="assets/images/hero/hero1.png" class="w-full">
+            </figure>
+            <!-- <div class="line w-[40px]"></div> -->
+        </section>
     </main>
     <!-- JS -->
     <script src="assets/js/main.js"></script>
