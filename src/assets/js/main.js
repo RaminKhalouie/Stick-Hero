@@ -122,7 +122,7 @@ function endMove(e) {
                 ground.style.left = ground.dataset.l + 'px';
 
                 activeLine += 1;
-                if (activeLine >= linesCount / 2) {
+                if (activeLine + 2 >= linesCount / 2) {
                     generateLine();
                 }
 
