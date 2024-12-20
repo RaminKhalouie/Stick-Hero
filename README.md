@@ -1,4 +1,4 @@
-# Stick-Hero Sample
+# Stick-Hero
 
 **This is simple sample with pure HTML and CSS and Tailwind css JavaScript**
 
