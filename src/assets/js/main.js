@@ -74,10 +74,20 @@ function generateLine(count = 20) {
 }
 
 let inter;
-document.addEventListener('touchstart', strartMove);
-document.addEventListener('touchend', endMove);
-document.addEventListener('mousedown', strartMove);
-document.addEventListener('mouseup', endMove);
+//Detect device type
+const detectDeviceType = () =>
+    /Mobile|Android|iPhone|iPad/i.test(navigator.userAgent)
+        ? 'Mobile'
+        : 'Desktop';
+
+if (detectDeviceType() == 'Mobile') {
+    document.addEventListener('touchstart', strartMove);
+    document.addEventListener('touchend', endMove);
+} else {
+    document.addEventListener('mousedown', strartMove);
+    document.addEventListener('mouseup', endMove);
+}
+
 
 function strartMove(e) {
     if (e.target.tagName == 'SECTION' || e.target.tagName == 'DIV') {
@@ -102,8 +112,8 @@ function endMove(e) {
             bar.style.transform = 'rotate(90deg)';
 
             if (
-                bar.clientHeight < (Number(line.dataset.mr) + line.nextElementSibling.clientWidth) &&
-                bar.clientHeight > (Number(line.dataset.mr))) {
+                bar.clientHeight <= (Number(line.dataset.mr) + line.nextElementSibling.clientWidth) &&
+                bar.clientHeight >= (Number(line.dataset.mr))) {
 
                 // hero.style.transform = 'translateX(' + (bar.clientHeight + (line.clientWidth - 20)) + 'px)';
 
@@ -145,7 +155,9 @@ function endMove(e) {
                 gameover.classList.replace('hidden', 'flex');
 
             }
-
+            // console.log("BAR", bar.clientHeight);
+            // console.log("START", (Number(line.dataset.mr)));
+            // console.log("END", (Number(line.dataset.mr) + line.nextElementSibling.clientWidth));
         }
     }
 }
