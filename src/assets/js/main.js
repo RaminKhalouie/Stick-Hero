@@ -70,7 +70,7 @@ function generateLine(count = 20) {
         // console.log(w);
 
     }
-    linesCount += 20;
+    linesCount += count;
 }
 
 let inter;
@@ -162,6 +162,7 @@ function reset() {
     }
     play();
     activeLine = 1;
+    linesCount = 0;
     setBackGroundImage();
 
     ground.style.left = ground.dataset.l2 + 'px';
