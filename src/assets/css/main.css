@@ -568,7 +568,7 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1536px) {
   .btn {
     font-size: 3.75rem;
     line-height: 1;
@@ -951,13 +951,15 @@ video {
   .lg\:w-9 {
     width: 2.25rem;
   }
+}
 
-  .lg\:text-7xl {
+@media (min-width: 1536px) {
+  .\32xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
   }
 
-  .lg\:text-9xl {
+  .\32xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
   }

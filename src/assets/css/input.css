@@ -4,7 +4,7 @@
 
 @layer components {
     .btn {
-        @apply rounded-full text-white bg-red-700 p-4 text-4xl lg:text-6xl uppercase aspect-square mt-6;
+        @apply rounded-full text-white bg-red-700 p-4 text-4xl 2xl:text-6xl uppercase aspect-square mt-6;
     }
 
     .line {
