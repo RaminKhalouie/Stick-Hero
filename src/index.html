@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Mainfest -->
+    <link rel="manifest" href="../manifest.json">
 </head>
 
 <body>
@@ -28,8 +30,9 @@
             </figure>
 
             <!-- logo -->
-            <h1 class="flex flex-col justify-center items-center text-6xl 2xl:text-9xl font-bold" id="logo">STICK <strong
-                    class="text-4xl 2xl:text-7xl">HERO</strong></h1>
+            <h1 class="flex flex-col justify-center items-center text-6xl 2xl:text-9xl font-bold" id="logo">STICK
+                <strong class="text-4xl 2xl:text-7xl">HERO</strong>
+            </h1>
 
             <h2 id="score"
                 class="px-8 py-4 rounded-lg bg-stone-800 text-white text-4xl shadow-lg shadow-[#0005] hidden ">0</h2>
@@ -92,6 +95,20 @@
     </article>
     <!-- JS -->
     <script src="assets/js/main.js"></script>
+    <!-- Manifest -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+                .register("serviceWorker.js")
+                .then(reg => {
+                    console.log("Service worker registred successfully", reg);
+                })
+                .catch(err => {
+                    console.log("service worker not registred !!", err);
+                });
+        }
+
+    </script>
 </body>
 
 </html>

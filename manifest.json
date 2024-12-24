@@ -1,0 +1,22 @@
+{
+    "name": "Stick Hero Game",
+    "short_name": "Stick Hero",
+    "start_url": "/Stick-Hero/src/index.html",
+    "display": "standalone",
+    "background_color": "#dc2323",
+    "theme_color": "#ea580c",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "https://raminkhalouie.github.io/Stick-Hero/src/assets/images/icon/logo512.png",
+            "type": "image/png",
+            "sizes": "512×512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://raminkhalouie.github.io/Stick-Hero/src/assets/images/icon/logo144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
